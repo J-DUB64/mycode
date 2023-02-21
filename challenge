@@ -1,0 +1,9 @@
+#!/usr/bin/env python
+
+name = input("What is your name? ")
+day = input("What day of the week is it? ")
+
+greeting = "Hello, {name}! Happy {day}!".format(name=name, day=day)
+
+print(greeting)
+
