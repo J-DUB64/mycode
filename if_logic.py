@@ -4,14 +4,14 @@ import random
 
 #Inputs from user
 protein = input("What kind of protein would you like? (chicken, beef, fish, or random?): ")
-while protein not in ["chicken", "beef", "fish", "random"]:
-    print("Invalid input. Please enter chicken, beef, fish, or random.")
+    while protein not in ["chicken", "beef", "fish", "random"]:
+        print("Invalid input. Please enter chicken, beef, fish, or random.")
     protein = input("What kind of protein would you like? (chicken, beef, fish, or random): ")
 
 side = input("What type of side would you like (vegetables, starch, or salad): ")
-while side not in ["vegetables", "starch", "salad"]:
-    print("Invalid input. Please enter vegetables, starch, or salad.")
-    side = input("What type of vegetable would you like? (vegetables, starch, or salad): ")
+    while side not in ["vegetables", "starch", "salad"]:
+        print("Invalid input. Please enter vegetables, starch, or salad.")
+        side = input("What type of vegetable would you like? (vegetables, starch, or salad): ")
 
 #Determine What to Recommend For Chicken
 if protein == "chicken":
