@@ -27,19 +27,19 @@ if protein == "chicken":
             recommendation = "Chicken breast and rice with a side of garlic bread"
         elif side == "salad":
             recommendation = "chicken caesar salad with grilled chicken breast"
-        else: 
-            recommendation = "Sorry, I'm not sure what to do with that type of side."
+     else: 
+        recommendation = "Sorry, I'm not sure what to do with that type of side."
         # Print recommendation
 
-elif chicken_type == " thigh":
+    elif chicken_type == " thigh":
         if side == "vegetables":
             recommendation = "grilled chicken with roasted vegetables"
-        elif side == "starch":
-            recommendation = "chicken thigh and rice with a side of garlic bread"
-        elif side =="salad":
-             recommendation = "chicken caesar salad with grilled chicken thigh"
-        else:
-            recommendation = "Sorry, I'm not sure what type of side that is."            
+         elif side == "starch":
+                recommendation = "chicken thigh and rice with a side of garlic bread"
+         elif side =="salad":
+                 recommendation = "chicken caesar salad with grilled chicken thigh"
+    else:
+        recommendation = "Sorry, I'm not sure what type of side that is."            
         # Print recommendation
         
     elif chicken_type == "drumstick":
