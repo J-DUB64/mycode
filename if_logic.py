@@ -6,7 +6,7 @@ import random
 protein = input("What kind of protein would you like? (chicken, beef, fish, or random?): ")
     while protein not in ["chicken", "beef", "fish", "random"]:
         print("Invalid input. Please enter chicken, beef, fish, or random.")
-    protein = input("What kind of protein would you like? (chicken, beef, fish, or random): ")
+        protein = input("What kind of protein would you like? (chicken, beef, fish, or random): ")
 
 side = input("What type of side would you like (vegetables, starch, or salad): ")
     while side not in ["vegetables", "starch", "salad"]:
@@ -17,7 +17,8 @@ side = input("What type of side would you like (vegetables, starch, or salad): "
 if protein == "chicken":
     chicken_type = input("What type of chicken would you like? (breast, thigh, or drumstick): ")
     chicken_type = chicken_type.capitalize()
-     print("Invalid input. Please enter breast, thigh, or drumstick.")
+    while chicken_type not in ["breast", "thigh", "drumstick"]:
+        print("Invalid input. Please enter breast, thigh, or drumstick.")
         chicken_type = input("What type of chicken would you like? (breast, thigh, or drumstick): ")
 
     if chicken_type == "breast":
@@ -27,19 +28,19 @@ if protein == "chicken":
             recommendation = "Chicken breast and rice with a side of garlic bread"
         elif side == "salad":
             recommendation = "chicken caesar salad with grilled chicken breast"
-     else: 
-        recommendation = "Sorry, I'm not sure what to do with that type of side."
+        else: 
+            recommendation = "Sorry, I'm not sure what to do with that type of side."
         # Print recommendation
 
-    elif chicken_type == " thigh":
-        if side == "vegetables":
+    elif chicken_type == "thigh":
+         if side == "vegetables":
             recommendation = "grilled chicken with roasted vegetables"
-         elif side == "starch":
+        elif side == "starch":
                 recommendation = "chicken thigh and rice with a side of garlic bread"
-         elif side =="salad":
+        elif side =="salad":
                  recommendation = "chicken caesar salad with grilled chicken thigh"
-    else:
-        recommendation = "Sorry, I'm not sure what type of side that is."            
+        else:
+            recommendation = "Sorry, I'm not sure what type of side that is."            
         # Print recommendation
         
     elif chicken_type == "drumstick":
@@ -59,8 +60,9 @@ if protein == "chicken":
 elif protein == "beef":
     beef_type = input("What type of beef would you like? (steak, ground beef, or roast beef): ")
     beef_type = beef_type.capitalize()
-       print("Invalid input. Please enter steak, ground beef, or roast beef.")
-        chicken_type = input("What type of chicken would you like?(steak, ground beef, or roast beef ): ")
+    while beef_type not in ["Steak", "Ground beef", "Roast beef"]:
+        print("Invalid input. Please enter steak, ground beef, or roast beef.")
+        beef_type = input("What type of beef would you like?(steak, ground beef, or roast beef ): ")
 
     if beef_type == "steak":
         if side == "vegetables":
@@ -95,10 +97,11 @@ elif protein == "beef":
         recommendation = "Sorry, I'm not sure what type of beef that is."
 
 # Determine what to recommend Fish
-if protein == "fish":
+elif protein == "fish":
     fish_type = input("What type of fish would you like? (salmon, tuna, or shrimp): ")
     fish_type = fish_type.capitalize()
-    print("Invalid input. Please enter steak, ground beef, or roast beef.")
+    while fish_type not in ["salmon", "tuna", "Roast beef"]:
+        print("Invalid input. Please enter steak, ground beef, or roast beef.")
         chicken_type = input("What type of chicken would you like?(steak, ground beef, or roast beef ): ")
 
     if fish_type == "salmon":
@@ -135,12 +138,60 @@ if protein == "fish":
 else:
     recommendation = "Sorry, I'm not sure what protein you want."
 
-#When I just want the program to randomly decide for me
+# When the user wants the program to randomly decide
+elif protein == "random":
+    proteins = ["chicken", "beef", "fish"]
+    protein = random.choice(proteins)
+    print("I recommend", protein)
 
+    if protein == "chicken":
+        chicken_types = ["breast", "thigh", "drumstick"]
+        chicken_type = random.choice(chicken_types)
+        print("I recommend", chicken_type)
+
+        if chicken_type == "breast":
+            if side == "vegetables": 
+            recommendation = "grilled chicken breast with roasted vegetables"
+        elif side == "starch":
+            recommendation = "Chicken breast and rice with a side of garlic bread"
+        elif side == "salad":
+            recommendation = "chicken caesar salad with grilled chicken breast"
+        else: 
+            recommendation = "Sorry, I'm not sure what to do with that type of side."
+
+    elif chicken_type == "thigh":
+        if side == "vegetables":
+            recommendation = "grilled chicken with roasted vegetables"
+        elif side == "starch":
+            recommendation = "chicken thigh and rice with a side of garlic bread"
+        elif side =="salad":
+            recommendation = "chicken caesar salad with grilled chicken thigh"
+        else:
+            recommendation = "Sorry, I'm not sure what type of side that is."            
+
+    elif chicken_type == "drumstick":
+        if side == "vegetables":
+            recommendation = "grilled chicken drumstick with roasted vegetables"
+        elif side == "starch":
+            recommendation = "chicken drumstick and rice with a side of garlic bread"
+        elif side == "salad":
+            recommendation = "chicken caesar salad with grilled chicken drumstick"
+        else:
+            recommendation = "Sorry, I'm not sure what type of side that is."
+
+    else:
+        recommendation = "Sorry, I'm not sure what type of chicken that is."
+
+    print("Based on your preferences, you should eat", recommendation, "for dinner.")
+    
+    return
+
+    print("Based on your preferences, you should eat", recommendation, "for dinner.")
+    return
+
+# If the user entered a valid input
+else:
 
     # Print recommendation
     print("Based on your preferences, you should eat", recommendation, "for dinner.")
-
-
-    
 
