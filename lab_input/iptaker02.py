@@ -13,5 +13,8 @@ def main():
     ## print() can be given a series of objects separated by a comma
     print("You told me the IPv4 address is:", user_input)
 
+    #vendor = input("Please input the vendor name: ")
+    print(vendor)
+
 main()
 
