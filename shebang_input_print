@@ -1,0 +1,9 @@
+#!/usr/bin/env python3
+
+name = input("what is your name? ")
+date = input("What day of the week is it? ")
+
+greeting = "Hello {}! Happy {}!".format(name.strip().capitalize(), day.strip().capitalize())
+
+print(greeting)
+

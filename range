@@ -1,0 +1,13 @@
+#!/usr/bin/env python3
+
+#count the number of bottles
+num_bottles = int(input("How many bottles of beer are on the wall?"))
+
+if num_bottles < 1 or num_bottles > 100:
+    print("Sorry, you can only count down from 1 to 100 bottles of beer")
+
+else: 
+    for i in range (num_bottles, 0, -1):
+        print(f"{i} bottles of beer on the wall!")
+        print(f"{i} bottles of beer! you take one down, pass it around!")
+        print(f"{i-1} bottles of beer on the wall!") 
