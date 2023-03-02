@@ -1,0 +1,20 @@
+#!/bin/usr/env python3
+from flask import Flask, redirect, request, render_template
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    if request.method == 'POST':
+        answer = request.form['answer'].lower() # extract the answer submitted in the form
+        if answer == 'your correct answer here': # replace with your actual correct answer
+            return redirect('/correct')
+    return render_template('index.html')
+
+@app.route('/correct')
+def correct():
+    return "Congratulations! Your answer is correct."
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
